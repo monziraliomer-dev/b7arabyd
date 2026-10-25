@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b35">
+  <title>بحر أبيض | متجر إلكتروني</title>
+  <style>
+    :root {
+      --green: #123b35;
+      --cream: #f7f5ef;
+      --gold: #c5a66b;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, Arial, sans-serif;
+      background: var(--cream);
+      color: #24352f;
+    }
+    header {
+      background: var(--green);
+      color: white;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 8px; font-size: 30px; }
+    header p { margin: 0; color: #e4e8df; }
+    main { max-width: 1000px; margin: auto; padding: 20px 14px; }
+    .intro {
+      background: white;
+      padding: 22px;
+      border-radius: 16px;
+      margin-bottom: 22px;
+      border-right: 4px solid var(--gold);
+    }
+    .intro h2 { margin-top: 0; }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 14px;
+    }
+    .product, .cart {
+      background: white;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 3px 14px #14251b0b;
+    }
+    .product .symbol {
+      background: #e8eee8;
+      border-radius: 12px;
+      text-align: center;
+      padding: 22px 5px;
+      font-size: 38px;
+    }
+    .product h3 { margin-bottom: 8px; }
+    .price { color: var(--green); font-weight: 700; }
+    button {
+      border: 0;
+      border-radius: 9px;
+      padding: 11px 14px;
+      font: inherit;
+      cursor: pointer;
+    }
+    .add {
+      width: 100%;
+      background: var(--green);
+      color: white;
+      margin-top: 10px;
+    }
+    .cart { margin-top: 24px; }
+    .cart h2 { margin-top: 0; }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .remove { background: #f3e7e3; color: #7b3024; padding: 4px 10px; }
+    .total { font-size: 19px; font-weight: bold; margin: 16px 0; }
+    input, textarea {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #d6dcd6;
+      border-radius: 9px;
+      font: inherit;
+      background: white;
+    }
+    .order {
+      width: 100%;
+      background: #19764a;
+      color: white;
+    }
+    .note { font-size: 13px; color: #626c65; line-height: 1.7; }
+    footer {
+      text-align: center;
+      padding: 22px;
+      color: #68716b;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>بحر أبيض</h1>
+    <p>اختيارات مميزة، وتجربة تسوق بسيطة</p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>أهلًا بك في بحر أبيض</h2>
+      <p>تصفح منتجاتنا، اختر ما يناسبك، وأرسل طلبك عبر واتساب.
+      الدفع عند الاستلام.</p>
+    </section>
+
+    <h2>منتجات المتجر</h2>
+    <section class="products" id="products"></section>
+
+    <section class="cart">
+      <h2>سلة المشتريات</h2>
+      <div id="cartItems">السلة فارغة حاليًا.</div>
+      <div class="total" id="total">الإجمالي: 0 جنيه</div>
+
+      <h3>بيانات التوصيل</h3>
+      <form id="checkout">
+        <input id="customerName" placeholder="الاسم بالكامل"
+          autocomplete="name" required>
+        <input id="customerPhone" type="tel"
+          placeholder="رقم الهاتف" autocomplete="tel" required>
+        <textarea id="customerAddress"
+          placeholder="عنوان التوصيل بالتفصيل"
+          autocomplete="street-address" required></textarea>
+        <button class="order" type="submit">
+          متابعة الطلب عبر واتساب
+        </button>
+      </form>
+      <p class="note">
+        هذه نسخة تجريبية. الطلب لا يُحفظ في قاعدة بيانات المتجر بعد.
+        لا تستخدمها لاستقبال طلبات حقيقية قبل ربط النظام الخلفي.
+      </p>
+    </section>
+  </main>
+
+  <footer>بحر أبيض © <span id="year"></span></footer>
+
+  <script>
+    // بيانات تجريبية؛ سنستبدلها ببيانات قاعدة البيانات لاحقًا.
+    const products = [
+      { id: 1, name: "منتج تجريبي أول", price: 250, symbol: "🛍️" },
+      { id: 2, name: "منتج تجريبي ثانٍ", price: 400, symbol: "🎁" },
+      { id: 3, name: "منتج تجريبي ثالث", price: 150, symbol: "✨" }
+    ];
+
+    // استبدل الرقم برقم واتساب المتجر بصيغة دولية دون + أو مسافات.
+    // مثال توضيحي لمصر: 201XXXXXXXXX
+    const WHATSAPP_NUMBER = "201XXXXXXXXX";
+
+    const cart = {};
+
+    const money = value =>
+      value.toLocaleString("ar-EG") + " جنيه";
+
+    function renderProducts() {
+      document.getElementById("products").innerHTML =
+        products.map(p => `
+          <article class="product">
+            <div class="symbol">${p.symbol}</div>
+            <h3>${p.name}</h3>
+            <div class="price">${money(p.price)}</div>
+            <button class="add" data-add="${p.id}">
+              أضف إلى السلة
+            </button>
+          </article>
+        `).join("");
+    }
+
+    function renderCart() {
+      const ids = Object.keys(cart).filter(id => cart[id] > 0);
+      const container = document.getElementById("cartItems");
+
+      if (!ids.length) {
+        container.textContent = "السلة فارغة حاليًا.";
+      } else {
+        container.innerHTML = ids.map(id => {
+          const p = products.find(item => item.id === Number(id));
+          return `
+            <div class="cart-item">
+              <span>${p.name} × ${cart[id]}</span>
+              <span>
+                ${money(p.price * cart[id])}
+                <button class="remove" data-remove="${id}"
+                  aria-label="حذف ${p.name}">حذف</button>
+              </span>
+            </div>`;
+        }).join("");
+      }
+
+      const total = products.reduce(
+        (sum, p) => sum + p.price * (cart[p.id] || 0), 0
+      );
+      document.getElementById("total").textContent =
+        "الإجمالي: " + money(total);
+    }
+
+    document.addEventListener("click", event => {
+      const addId = event.target.dataset.add;
+      const removeId = event.target.dataset.remove;
+
+      if (addId) {
+        cart[addId] = (cart[addId] || 0) + 1;
+        renderCart();
+      }
+      if (removeId) {
+        delete cart[removeId];
+        renderCart();
+      }
+    });
+
+    document.getElementById("checkout").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const ids = Object.keys(cart).filter(id => cart[id] > 0);
+      if (!ids.length) {
+        alert("أضف منتجًا واحدًا على الأقل إلى السلة.");
+        return;
+      }
+
+      if (!/^20\d{10,11}$/.test(WHATSAPP_NUMBER) ||
+          WHATSAPP_NUMBER.includes("X")) {
+        alert("يجب ضبط رقم واتساب المتجر داخل الكود أولًا.");
+        return;
+      }
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const address = document.getElementById("customerAddress").value.trim();
+
+      if (!name || !phone || !address) return;
+
+      const lines = ids.map(id => {
+        const p = products.find(item => item.id === Number(id));
+        return `- ${p.name} × ${cart[id]} = ${p.price * cart[id]} جنيه`;
+      });
+
+      const total = products.reduce(
+        (sum, p) => sum + p.price * (cart[p.id] || 0), 0
+      );
+
+      const message = [
+        "مرحبًا، أريد طلبًا من متجر بحر أبيض.",
+        "",
+        ...lines,
+        "",
+        `الإجمالي المبدئي: ${total} جنيه`,
+        "الدفع: عند الاستلام",
+        `الاسم: ${name}`,
+        `الهاتف: ${phone}`,
+        `العنوان: ${address}`,
+        "",
+        "أرجو تأكيد توافر المنتجات وتكلفة التوصيل."
+      ].join("\n");
+
+      window.open(
+        "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message),
+        "_blank"
+      );
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
