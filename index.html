@@ -1,333 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0f0f0f">
-<meta property="og:title" content="بحرأبيض للتسوق">
-<meta property="og:description" content="بوابة التخفيضات في السودان">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
-<title>بحرأبيض للتسوق | Market B7rabyd</title>
-<meta name="description" content="بحرأبيض للتسوق - بوابة التخفيضات في السودان">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0f0f0f"><title>بحر أبيض للتسوق | Market B7rabyd</title>
+<meta name="description" content="بحر أبيض للتسوق — سيارات ومولدات وأحذية وملابس ومنتجات متنوعة">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#faf8f2;--card:#fff;--line:#ebe5d3;--y:#b88700;--y2:#e0a800;--t:#1a1a1a;--m:#666;--g:#f5b800}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Cairo,Tahoma,Arial,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1150px;margin:auto;padding:0 16px}
-.bar{background:var(--g);color:#000;text-align:center;font-weight:800;padding:6px 10px;font-size:14px}
-header{position:sticky;top:0;z-index:20;background:#0f0f0f;border-bottom:3px solid var(--g);box-shadow:0 2px 12px #0002}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:10px}
-.logo b{color:var(--g);font-size:22px;font-weight:800}.logo small{display:block;color:#bbb;font-size:11px;letter-spacing:2px;direction:ltr;text-align:right;margin-top:-8px}
-nav{display:flex;gap:16px;font-weight:600;font-size:15px;color:#eee}nav a:hover{color:var(--g)}
-.btn{background:var(--g);color:#000;border:0;border-radius:10px;padding:10px 18px;font:800 15px Cairo,sans-serif;cursor:pointer;display:inline-block}
-.btn:hover{background:#f2bb15}.btn.o{background:transparent;color:var(--y);border:1.5px solid var(--y)}.btn.r{background:#c0392b;color:#fff}.btn.k{background:#0f0f0f;color:var(--g)}.hero .btn.o{color:#000;border-color:#000}
-.hero{padding:60px 0 40px;text-align:center;background:linear-gradient(135deg,#fff8dc 0%,#ffe58a 55%,#f5b800 100%)}
-.hero h1{font-size:clamp(28px,6vw,52px);font-weight:800;line-height:1.3}.hero h1 span{color:#000}
-.hero p{color:#3d3d3d;max-width:620px;margin:14px auto 22px;font-size:17px}
-.cd{display:flex;gap:10px;justify-content:center;margin:18px 0}.cd div{background:var(--card);border:1px solid var(--y2);border-radius:10px;padding:8px 14px;min-width:66px}.cd b{display:block;font-size:24px;color:var(--y)}.cd small{color:var(--m);font-size:12px}
-.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:30px 0}
-.trust div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;box-shadow:0 2px 10px #0000000d}.trust i{font-style:normal;font-size:26px;display:block}
-h2.t{font-size:28px;margin:36px 0 18px;text-align:center}h2.t span{color:var(--y)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s;display:flex;flex-direction:column;box-shadow:0 4px 16px #00000012}
-.card:hover{transform:translateY(-5px);border-color:var(--y)}
-.pic{height:210px;background:linear-gradient(135deg,#fff6d6,#efe8d2);display:flex;align-items:center;justify-content:center;font-size:84px;position:relative;overflow:hidden}
-.pic img{width:100%;height:100%;object-fit:cover}
-.badge{position:absolute;top:10px;right:10px;background:#d32f2f;color:#fff;font-weight:800;border-radius:8px;padding:2px 10px;font-size:14px}
-.cb{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}.cb h3{font-size:19px}.cb p{color:var(--m);font-size:14px;flex:1}
-.pr{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.pr b{font-size:21px;color:var(--y)}.pr s{color:#777;font-size:14px}
-.note{text-align:center;color:var(--m);font-size:13px;margin-top:14px}
-.about,.trk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;text-align:center;margin-top:10px}
-.about p{color:#444;max-width:700px;margin:10px auto}
-.faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:8px}.faq summary{cursor:pointer;font-weight:700}.faq p{color:var(--m);margin-top:6px}
-input,select,textarea{width:100%;background:#fff;color:var(--t);border:1px solid #d9d2bb;border-radius:10px;padding:10px 12px;font:15px Cairo,sans-serif;margin:4px 0 10px}
-input:focus,textarea:focus,select:focus{outline:none;border-color:var(--y)}label{font-size:13px;color:var(--m)}
-.mask{position:fixed;inset:0;background:#000b;z-index:50;display:none;align-items:center;justify-content:center;padding:14px}.mask.on{display:flex}
-.modal{background:#fff;border:1px solid var(--y2);border-radius:16px;padding:20px;width:100%;max-width:440px;max-height:92vh;overflow:auto}
-.modal h3{color:var(--y);margin-bottom:10px}
-.tl{display:flex;flex-direction:column;gap:8px;text-align:right;max-width:340px;margin:14px auto}.tl div{padding:8px 12px;border-radius:8px;background:#fff;border:1px solid var(--line);color:var(--m)}.tl .d{border-color:var(--y);color:var(--y);font-weight:700}
-footer{margin-top:44px;background:#0f0f0f;border-top:3px solid var(--g);padding:28px 0;text-align:center;color:#bbb;font-size:14px}footer a{color:var(--g)}footer .btn{color:#000}
-.fb{position:fixed;bottom:84px;left:18px;z-index:30;background:#1877f2;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 30px Arial;box-shadow:0 4px 18px #0006}.wa{position:fixed;bottom:18px;left:18px;z-index:30;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 18px #0008}
-.adm{padding:20px 0}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.tabs .btn{padding:8px 14px}
-.row{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:8px;flex-wrap:wrap}.row>span{flex:1;min-width:140px}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:640px){nav{display:none}.g2{grid-template-columns:1fr}}
-
-.logo{display:flex;align-items:center;gap:10px}.logo>span{display:block}.mk{font-style:normal;background:var(--g);width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px}
-.pill{display:inline-block;background:#0f0f0f;color:var(--g);font-weight:700;font-size:14px;padding:5px 16px;border-radius:30px;margin-bottom:14px}
-h2.t{position:relative;padding-bottom:14px}h2.t::after{content:"";position:absolute;bottom:0;right:50%;transform:translateX(50%);width:60px;height:4px;border-radius:4px;background:var(--g)}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}.steps div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;font-weight:700;box-shadow:0 2px 10px #0000000d}
-.steps b{display:flex;width:40px;height:40px;margin:0 auto 8px;border-radius:50%;background:#0f0f0f;color:var(--g);align-items:center;justify-content:center;font-size:18px}
-.ft{display:flex;gap:10px;flex-wrap:wrap;font-size:12.5px;color:#2e7d32;font-weight:700}
-.pic img{transition:transform .5s}.card:hover .pic img{transform:scale(1.07)}
-.btn{transition:.2s;box-shadow:0 3px 10px #f5b80040}.btn:hover{transform:translateY(-1px)}
-.card,.trust div,.steps div,.about,.trk{animation:up .6s both}@keyframes up{from{opacity:0;transform:translateY(16px)}}
-.about{background:linear-gradient(135deg,#fff,#fff7d6);border-color:var(--y2)}
-
-/* ===== تحسين الألوان ===== */
-:root{--bg:#fbf9f4;--y:#9a6b00;--g:#f5b800;--m:#5f5f5f;--line:#ece6d6}
-.hero{background:radial-gradient(circle at 85% 0,#ffe7a0 0,transparent 42%),radial-gradient(circle at 8% 100%,#fff0bd 0,transparent 38%),#fffdf7;border-bottom:1px solid var(--line)}
-.hero h1 span{background:linear-gradient(transparent 62%,#f5b80099 62%);color:#111;padding:0 8px;border-radius:4px}
-.hero p{color:#444}
-.cd div{background:#111;border:0;box-shadow:0 4px 14px #0003}.cd b{color:var(--g)}.cd small{color:#ccc}
-.btn{background:linear-gradient(135deg,#ffd23f,#f5b800)}
-.card .btn{width:100%;background:#111;color:var(--g);box-shadow:none}.card .btn:hover{background:var(--g);color:#000}
-.pr b{color:#8f6200}
-.trust div{border-top:3px solid var(--g)}
-:focus-visible{outline:2px solid var(--g);outline-offset:2px}
-@media(max-width:480px){header .btn{padding:7px 10px;font-size:13px}.logo b{font-size:17px}.logo small{display:none}.mk{width:34px;height:34px}header .wrap>div{gap:5px!important}.hero{padding:40px 0 30px}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+:root{--bg:#fbf9f4;--card:#fff;--line:#ece6d6;--gold:#f5b800;--gold-dark:#8f6200;--ink:#111;--muted:#626262;--green:#168044;--red:#bd2c2c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Cairo,Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}.wrap{max-width:1180px;margin:auto;padding:0 16px}
+.topbar{background:var(--gold);padding:7px 12px;text-align:center;font-weight:800;font-size:14px}
+header{position:sticky;top:0;z-index:10;background:#0f0f0f;color:#fff;border-bottom:3px solid var(--gold)}header .wrap{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{display:flex;gap:10px;align-items:center}.logo-icon{background:var(--gold);color:#111;border-radius:12px;padding:3px 10px;font-size:24px}.logo b{display:block;color:var(--gold);font-size:20px}.logo small{display:block;color:#bbb;font-size:11px;direction:ltr}
+nav{display:flex;gap:16px;align-items:center;font-weight:700}nav a:hover{color:var(--gold)}.actions{display:flex;gap:8px;align-items:center}
+.btn{border:0;border-radius:10px;padding:10px 16px;background:var(--gold);color:#111;font-weight:800;display:inline-block}.btn.dark{background:#111;color:var(--gold)}.btn.outline{background:transparent;border:1px solid var(--gold-dark);color:var(--gold-dark)}.btn.red{background:var(--red);color:white}.btn.small{padding:6px 10px;font-size:13px}
+.hero{padding:58px 0 48px;background:radial-gradient(circle at 85% 0,#ffe7a0 0,transparent 42%),radial-gradient(circle at 8% 100%,#fff0bd 0,transparent 38%),#fffdf7;border-bottom:1px solid var(--line);text-align:center}.pill{display:inline-block;background:#111;color:var(--gold);padding:4px 16px;border-radius:30px;font-weight:800}.hero h1{font-size:clamp(28px,5vw,50px);line-height:1.35;margin:14px 0}.hero p{max-width:720px;margin:0 auto 22px;color:#444;font-size:17px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:25px auto}.trust div{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:12px;padding:13px;text-align:center;font-weight:700}
+.section{padding:28px 0}.section h2{text-align:center;font-size:28px;margin:12px 0 22px}.section h2 span{color:var(--gold-dark)}.categories{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}.category-btn{border:1px solid var(--line);background:#fff;border-radius:24px;padding:7px 15px;font-weight:700}.category-btn.active,.category-btn:hover{background:#111;color:var(--gold);border-color:#111}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 4px 16px #0000000b}.product-img{height:220px;background:linear-gradient(135deg,#fff6d6,#efe8d2);display:flex;align-items:center;justify-content:center;font-size:70px;overflow:hidden;cursor:pointer}.product-img img{width:100%;height:100%;object-fit:cover}.card-body{padding:15px;display:flex;flex-direction:column;gap:7px;flex:1}.card h3{margin:0;font-size:19px}.muted{color:var(--muted)}.price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.price strong{font-size:21px;color:var(--gold-dark)}.price s{color:#777;font-size:14px}.card-actions{display:flex;gap:8px;margin-top:8px}.card-actions button{flex:1}
+.info-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin:12px auto;max-width:850px}.info-box p{margin:8px 0}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.contact-item{padding:16px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:center}
+footer{margin-top:40px;background:#0f0f0f;color:#bbb;border-top:3px solid var(--gold);padding:28px 0;text-align:center}footer a{color:var(--gold)}.float-wa{position:fixed;bottom:18px;left:18px;background:#25d366;color:#fff;border-radius:50%;width:55px;height:55px;display:grid;place-items:center;font-size:27px;box-shadow:0 4px 15px #0004;z-index:9}
+input,textarea,select{width:100%;padding:10px 12px;border:1px solid #d9d2bb;border-radius:9px;background:#fff;margin:4px 0 10px;color:#111}label{font-size:13px;font-weight:700;color:#555}textarea{min-height:90px;resize:vertical}
+.overlay{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:15px;z-index:30}.overlay.open{display:flex}.modal{background:#fff;width:100%;max-width:650px;max-height:92vh;overflow:auto;border-radius:16px;padding:22px;border-top:4px solid var(--gold)}.modal h2{margin:0 0 12px}.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.close-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.admin-shell{padding:28px 0;min-height:65vh}.admin-panel{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;margin-bottom:18px}.admin-list{display:grid;gap:10px}.admin-row{border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.admin-row .grow{flex:1;min-width:170px}.admin-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}.notice{padding:10px 13px;background:#fff6d6;border:1px solid #ead58a;border-radius:9px;margin:10px 0}.status{font-weight:700;margin:8px 0}.hidden{display:none!important}
+@media(max-width:850px){nav{gap:9px;font-size:13px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.trust{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){header .wrap{flex-wrap:wrap;padding-top:8px;padding-bottom:8px}.logo b{font-size:16px}nav{order:3;width:100%;justify-content:space-between;display:flex;font-size:12px}.actions .btn{padding:7px 9px;font-size:12px}.grid{grid-template-columns:1fr 1fr;gap:10px}.product-img{height:145px;font-size:45px}.card-body{padding:10px}.card h3{font-size:16px}.card .price strong{font-size:17px}.card-actions{flex-direction:column}.contact-grid{grid-template-columns:1fr}.modal-grid{grid-template-columns:1fr}.hero{padding:38px 0}.section h2{font-size:24px}}
 </style>
 </head>
 <body>
-<div id="app"></div>
-<div class="mask" id="mask"><div class="modal" id="modal"></div></div>
-
+<div id="app"><div class="hero"><div class="wrap"><h1>بحر أبيض للتسوق</h1><p>جارٍ تحميل المتجر...</p></div></div></div>
+<div class="overlay" id="overlay"><div class="modal" id="modal"></div></div>
 <script>
-/* ================= الإعدادات الافتراضية (يمكن تعديلها من لوحة الأدمن) ================= */
-const DEFAULT={
- s:{name:"بحرأبيض للتسوق",en:"Market B7rabyd",owner:"201100154634",phone:"",cc:"249",fb:"https://www.facebook.com/bharabidmark",instagram:"",tiktok:"",youtube:"",cur:"ج.س",pass:"admin123",
- bar:"🔥 تخفيضات كبرى لفترة محدودة — اطلب الآن عبر الواتساب والتوصيل لباب بيتك!",
- h1:"بوابة التخفيضات في السودان",sub:"سيارات، ركشات، أحذية ومولدات كهربائية بأجود المنتجات وأحسن الأسعار.",
- about:"شركة بحرأبيض للتسويق والإعلان متخصصون في التجارة الإلكترونية، نقدم أجود المنتجات بأحسن الأسعار. بحرأبيض للتسوق بوابة التخفيضات في السودان.",
- end:new Date("2026-12-31T23:59:00").getTime()},
- p:[
- {id:1,n:"سيارات",e:"🚗",d:"سيارات بحالة ممتازة وأداء قوي واقتصادي في استهلاك الوقود، مفحوصة بالكامل، مريحة للأسرة وتتحمل الطرق السودانية. تجهيزات حديثة وضمان فحص قبل التسليم.",o:25000000,pr:21000000,img:""},
- {id:2,n:"ركشات",e:"🛺",d:"ركشة قوية ومتينة للعمل والنقل اليومي، محرك اقتصادي وقطع غيار متوفرة، مثالية لبدء مشروعك الخاص وتحقيق دخل ثابت.",o:7500000,pr:6300000,img:""},
- {id:3,n:"أحذية",e:"👟",d:"أحذية عصرية بخامات عالية الجودة، خفيفة ومريحة وبنعل مقاوم للانزلاق، تناسب الاستخدام اليومي والرياضة والمناسبات بأشكال وألوان متعددة.",o:60000,pr:45000,img:""},
- {id:4,n:"مولدات كهربائية",e:"⚡",d:"مولدات كهربائية قوية وموثوقة تعمل بكفاءة عالية وبصوت منخفض وتوفير في الوقود، حل مثالي للمنازل والمحلات والمشاريع عند انقطاع الكهرباء.",o:2400000,pr:1950000,img:""}
- ]};
-const ST=["تم استلام الطلب","قيد التجهيز","تم الشحن","في الطريق إليك","تم التسليم"];
-const FB="https://www.facebook.com/bharabidmark";
-const API_BASE="https://bahr-abyad-api.monzir-ali-omer.workers.dev";
-const API_PRODUCTS=API_BASE+"/api/products";
-const API_SETTINGS=API_BASE+"/api/settings";
+/* ضع رابط Cloudflare Worker المنشور هنا فقط. لا تضع ADMIN_TOKEN في هذا الملف. */
+const API_BASE = "https://bahr-abyad-api.monzir-ali-omer.workers.dev";
+const DEFAULT_SETTINGS={name:"بحر أبيض للتسوق",en:"Market B7rabyd",owner:"201100154634",phone:"",email:"",cc:"249",fb:"https://www.facebook.com/bharabidmark",instagram:"",tiktok:"",youtube:"",cur:"ج.س",bar:"🔥 تخفيضات كبرى لفترة محدودة — اطلب الآن عبر الواتساب والتوصيل لباب بيتك!",h1:"بوابة التخفيضات في السودان",sub:"سيارات، مولدات كهربائية، أحذية وملابس ومنتجات متنوعة بأجود المنتجات وأحسن الأسعار.",about:"شركة بحر أبيض للتسويق والإعلان متخصصة في التجارة الإلكترونية، نقدم منتجات متنوعة بأسعار مناسبة وخدمة عملاء عبر الواتساب."};
+let settings={...DEFAULT_SETTINGS}, products=[], categories=[], adminToken="", adminTab="products", selectedCategory="الكل";
 const $=s=>document.querySelector(s);
-const esc=t=>String(t??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const fm=n=>Number(n).toLocaleString("en-US");
-const LS=(k,v)=>{try{if(v===undefined)return JSON.parse(localStorage.getItem(k));localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}};
-let D=JSON.parse(JSON.stringify(DEFAULT)),admin=false,tab="p";
-
-async function init(){
-  // Keep the local template as a fallback if the API is temporarily unavailable.
-  try {
-    const [settingsResponse, productsResponse] = await Promise.all([
-      fetch(API_SETTINGS + "?_=" + Date.now()),
-      fetch(API_PRODUCTS + "?_=" + Date.now())
-    ]);
-
-    if (settingsResponse.ok) {
-      const payload = await settingsResponse.json();
-      if (payload.success && payload.settings) {
-        const safeSettings = { ...payload.settings };
-        delete safeSettings.pass;
-        D.s = { ...D.s, ...safeSettings };
-      }
-    }
-
-    if (productsResponse.ok) {
-      const payload = await productsResponse.json();
-      if (payload.success && Array.isArray(payload.products)) {
-        D.p = payload.products.map(p => ({
-          id: Number(p.id),
-          n: p.name || "منتج",
-          e: /سيارة|cars/i.test(p.category || "") ? "🚗" :
-             /موتر|دراجة|motorcycle/i.test(p.category || "") ? "🏍️" :
-             /تك|tuk/i.test(p.category || "") ? "🛺" :
-             /مولد|generator/i.test(p.category || "") ? "⚡" :
-             /حذاء|shoe/i.test(p.category || "") ? "👟" : "🛍️",
-          d: p.description || "",
-          o: 0,
-          pr: Number(p.price) || 0,
-          img: p.image_url || "",
-          stock: Number(p.stock) || 0,
-          category: p.category || ""
-        }));
-      }
-    }
-  } catch (e) {
-    console.warn("تعذر الاتصال بواجهة المتجر؛ سيتم استخدام البيانات الافتراضية.", e);
-  }
-
-  if (!D.s.fb || D.s.fb === "https://facebook.com/") D.s.fb = DEFAULT.s.fb;
-  route();
-}
-addEventListener("hashchange",route);
-let view="";
-function route(){const h=location.hash;
- if(h==="#admin"){const p=prompt("كلمة مرور الأدمن:");if(p===D.s.pass){admin=true;view="a";renderAdmin();return}alert("كلمة المرور غير صحيحة");location.hash="";return}
- if(view!=="s"||h.startsWith("#track=")){admin=false;view="s";renderShop()}}
-function save(){LS("bh_data",D)}
-function phoneIntl(p){p=String(p).replace(/[^\d+]/g,"");if(p.startsWith("+"))return p.slice(1);if(p.startsWith("00"))return p.slice(2);if(p.startsWith("0"))return D.s.cc+p.slice(1);return p}
-
-function socialLinks(s){
-  const items = [
-    ["فيسبوك", s.fb, "📘"],
-    ["إنستغرام", s.instagram, "📸"],
-    ["تيك توك", s.tiktok, "🎵"],
-    ["يوتيوب", s.youtube, "▶️"]
-  ].filter(x => x[1] && /^https:\/\//i.test(x[1]));
-  const links = items.map(([label,url,icon]) =>
-    `<a class="btn o" style="margin:4px" target="_blank" rel="noopener noreferrer" href="${esc(url)}">${icon} ${label}</a>`
-  ).join("");
-  const phone = String(s.phone||"").replace(/[^0-9+]/g,"");
-  const phoneLink = phone ? `<a class="btn o" style="margin:4px" href="tel:${esc(phone)}">☎️ اتصل بنا</a>` : "";
-  return links + phoneLink;
-}
-
-/* ================= المتجر ================= */
-function renderShop(){
- const s=D.s;
- $("#app").innerHTML=`
- <div class="bar">${esc(s.bar)}</div>
- <header><div class="wrap"><a href="#" class="logo"><i class="mk">🛍️</i><span><b>${esc(s.name)}</b><small>${esc(s.en)}</small></span></a>
- <nav><a href="#products">المنتجات</a><a href="#how">طريقة الطلب</a><a href="#track">تتبع طلبك</a><a href="#faq">أسئلة</a></nav>
- <div style="display:flex;gap:8px"><a class="btn" style="background:#1877f2;color:#fff" target="_blank" href="${esc(s.fb||FB)}" rel="noopener">فيسبوك</a><a class="btn" target="_blank" href="https://wa.me/${s.owner}">واتساب</a></div></div></header>
- <section class="hero"><div class="wrap"><span class="pill">🏷️ بوابة التخفيضات في السودان</span><h1><span>${esc(s.h1)}</span> 🔥</h1><p>${esc(s.sub)}</p>
- <div id="cd" class="cd"></div><a class="btn k" href="#products">تسوّق الآن</a> <a class="btn o" target="_blank" href="${esc(s.fb||FB)}" rel="noopener">📘 تابعنا على فيسبوك</a></div></section>
- <div class="wrap">
- <div class="trust"><div><i>🚚</i>توصيل لجميع الولايات</div><div><i>💵</i>الدفع عند الاستلام</div><div><i>✅</i>منتجات أصلية ومضمونة</div><div><i>💬</i>دعم مباشر عبر الواتساب</div></div>
- <h2 class="t" id="products">منتجاتنا <span>المميزة</span></h2>
- <div class="grid">${D.p.map(p=>{const off=p.o>p.pr?Math.round((1-p.pr/p.o)*100):0;return`
- <div class="card"><div class="pic">${p.img?`<img src="${esc(p.img)}" alt="${esc(p.n)}" loading="lazy" onerror="this.remove()">`:""}<span>${esc(p.e||"🛍️")}</span>${off?`<div class="badge">خصم ${off}%</div>`:""}</div>
- <div class="cb"><h3>${esc(p.n)}</h3><p>${esc(p.d)}</p>
- <div class="ft"><span>✔ توصيل</span><span>✔ دفع عند الاستلام</span></div>
- <div class="pr"><b>${fm(p.pr)} ${esc(s.cur)}</b>${off?`<s>${fm(p.o)}</s>`:""}</div>${p.stock!==undefined?`<small style="color:var(--m)">المخزون: ${fm(p.stock)}</small>`:""}
- <button class="btn" onclick="order(${p.id})">اطلب الآن</button></div></div>`}).join("")}</div>
- <p class="note">الأسعار والمخزون المعروضان مأخوذان من بيانات المتجر.</p>
- <h2 class="t" id="how">طريقة <span>الطلب</span></h2>
- <div class="steps"><div><b>1</b>اختر المنتج المناسب</div><div><b>2</b>املأ بيانات التوصيل</div><div><b>3</b>أرسل الطلب عبر واتساب</div><div><b>4</b>استلم التأكيد وتتبّع طلبك</div></div>
- <h2 class="t" id="track">تتبّع <span>طلبك</span></h2>
- <div class="trk"><p style="color:var(--m)">بعد تأكيد طلبك عبر الواتساب سنرسل لك رابط التتبع. أو أدخل رقم طلبك:</p><div style="max-width:340px;margin:10px auto"><input id="tc" placeholder="مثال: BA-1234" dir="ltr"><button class="btn" onclick="trackCode()">تتبع</button></div><div id="tr"></div></div>
- <h2 class="t" id="faq">أسئلة <span>شائعة</span></h2>
- <div class="faq"><details><summary>كيف أطلب؟</summary><p>اضغط «اطلب الآن»، املأ بياناتك وسيُفتح الواتساب برسالة جاهزة، ثم أرسلها.</p></details>
- <details><summary>كيف أدفع؟</summary><p>الدفع عند الاستلام أو حسب الاتفاق مع خدمة العملاء.</p></details>
- <details><summary>كيف أعرف حالة طلبي؟</summary><p>بعد استلام طلبك نرسل لك رسالة تأكيد برابط تتبع على الواتساب.</p></details></div>
- <h2 class="t" id="about">من <span>نحن</span></h2>
- <div class="about"><h3 style="color:var(--y)">${esc(s.name)}</h3><p>${esc(s.about)}</p><div>${socialLinks(s)}</div></div>
- 
- </div>
- <footer><div class="wrap"><p>© ${new Date().getFullYear()} جميع الحقوق محفوظة لشركة <b>Nilova Studios</b> — السودان</p><p style="margin:10px 0">${socialLinks(s)}</p><p><a href="#about">من نحن</a> · <a href="#products">المنتجات</a> · <a href="#admin">لوحة التحكم</a></p></div></footer>
- <a class="wa" target="_blank" href="https://wa.me/${s.owner}" aria-label="واتساب">💬</a><a class="fb" target="_blank" href="${esc(s.fb||FB)}" rel="noopener" aria-label="فيسبوك">f</a>`;
- tick();
- const m=location.hash.match(/#track=(.+)/);if(m)showTrack(m[1]);
-}
-let ti;function tick(){clearInterval(ti);const f=()=>{const e=$("#cd");if(!e)return;let d=Math.max(0,D.s.end-Date.now());if(!d){e.style.display="none";return}const v=[[864e5,"يوم"],[36e5,"ساعة"],[6e4,"دقيقة"],[1e3,"ثانية"]];e.innerHTML=v.map(([u,l])=>{const x=Math.floor(d/u);d-=x*u;return`<div><b>${x}</b><small>${l}</small></div>`}).join("")};f();ti=setInterval(f,1000)}
-
-/* ================= الطلب ================= */
-function openM(h){$("#modal").innerHTML=h;$("#mask").classList.add("on")}
-function closeM(){$("#mask").classList.remove("on")}
-$("#mask").addEventListener("click",e=>{if(e.target.id==="mask")closeM()});
-function order(id){const p=D.p.find(x=>x.id===id);
- openM(`<h3>طلب: ${esc(p.n)}</h3>
- <label>الاسم *</label><input id="o1"><label>رقم التلفون *</label><input id="o2" type="tel" dir="ltr"><label>رقم احتياطي (اختياري)</label><input id="o3" type="tel" dir="ltr">
- <label>المدينة أو المنطقة *</label><input id="o4"><label>العنوان *</label><input id="o5"><label>عدد الطلب *</label><input id="o6" type="number" min="1" value="1" oninput="tot(${id})">
- <p id="ot" style="color:var(--y);font-weight:800;margin-bottom:10px">الإجمالي: ${fm(p.pr)} ${esc(D.s.cur)}</p>
- <button class="btn" style="width:100%" onclick="send(${id})">إرسال الطلب عبر واتساب</button>
- <button class="btn o" style="width:100%;margin-top:8px" onclick="closeM()">إلغاء</button>`)}
-function tot(id){const p=D.p.find(x=>x.id===id);$("#ot").textContent="الإجمالي: "+fm(p.pr*(+$("#o6").value||1))+" "+D.s.cur}
-function send(id){const p=D.p.find(x=>x.id===id),v=i=>$("#o"+i).value.trim();
- if(!v(1)||!v(2)||!v(4)||!v(5)||!(+v(6)>0)){alert("من فضلك أكمل الحقول المطلوبة");return}
- if(v(2).replace(/\D/g,"").length<8){alert("رقم التلفون غير صحيح");return}
- const code="BA-"+Math.floor(1000+Math.random()*9000),q=+v(6);
- const msg=`🛒 *طلب جديد — ${D.s.name}*\nرقم الطلب: ${code}\nالمنتج: ${p.n}\nالعدد: ${q}\nالإجمالي: ${fm(p.pr*q)} ${D.s.cur}\n\nالاسم: ${v(1)}\nالهاتف: ${v(2)}\nرقم احتياطي: ${v(3)||"—"}\nالمدينة/المنطقة: ${v(4)}\nالعنوان: ${v(5)}`;
- const my=LS("bh_my")||[];my.push({c:code,p:p.n,t:Date.now()});LS("bh_my",my);
- window.open(`https://wa.me/${D.s.owner}?text=${encodeURIComponent(msg)}`,"_blank");
- openM(`<h3>✅ تم تجهيز طلبك</h3><p>رقم طلبك: <b style="color:var(--y);font-size:20px">${code}</b></p><p style="color:var(--m);margin:8px 0 14px">اضغط «إرسال» داخل الواتساب لإتمام الطلب. بعد استلامه ستصلك رسالة تأكيد ورابط تتبع.</p><button class="btn" style="width:100%" onclick="closeM()">حسناً</button>`)}
-
-/* ================= التتبع (بدون سيرفر: الحالة داخل الرابط) ================= */
-const enc=o=>btoa(unescape(encodeURIComponent(JSON.stringify(o))));
-const dec=s=>JSON.parse(decodeURIComponent(escape(atob(s))));
-function tl(s){s=Math.max(0,Math.min(4,+s||0));return`<div class="tl">${ST.map((x,i)=>`<div class="${i<=s?"d":""}">${i<=s?"✔":"○"} ${x}</div>`).join("")}</div>`}
-function showTrack(h){try{const o=dec(h);$("#tr").innerHTML=`<h3 style="color:var(--y)">طلب ${esc(o.c)} — ${esc(o.n)}</h3><p style="color:var(--m)">${esc(o.p||"")}</p>${tl(o.s)}`;$("#track").scrollIntoView()}catch(e){$("#tr").textContent="رابط التتبع غير صالح"}}
-function trackCode(){const c=$("#tc").value.trim().toUpperCase(),m=(LS("bh_my")||[]).find(x=>x.c===c);
- $("#tr").innerHTML=m?`<h3 style="color:var(--y)">طلب ${esc(c)}</h3>${tl(0)}<p style="color:var(--m)">بانتظار تأكيد الاستلام من الإدارة، وسيصلك رابط التتبع على الواتساب.</p>`:`<p style="color:var(--m)">لم نجد الطلب على هذا الجهاز. استخدم رابط التتبع المرسل إليك على الواتساب.</p>`}
-
-/* ================= لوحة الأدمن ================= */
-function renderAdmin(){
- const T=[["p","المنتجات"],["o","الطلبات والتأكيد"],["s","إعدادات الموقع"],["b","نسخ احتياطي ونشر"]];
- $("#app").innerHTML=`<div class="wrap adm"><h2 style="color:var(--y)">⚙️ لوحة التحكم</h2>
- <div class="tabs">${T.map(([k,l])=>`<button class="btn ${tab===k?"":"o"}" onclick="tab='${k}';renderAdmin()">${l}</button>`).join("")}<a class="btn o" href="#" onclick="location.hash='';return false">← عرض المتجر</a></div><div id="ab"></div></div>`;
- ({p:aP,o:aO,s:aS,b:aB})[tab]();
-}
-function aP(){$("#ab").innerHTML=D.p.map(p=>`<div class="row"><span><b>${esc(p.n)}</b><br><small style="color:var(--m)">${fm(p.pr)} / ${fm(p.o)}</small></span><button class="btn" onclick="editP(${p.id})">تعديل</button><button class="btn r" onclick="delP(${p.id})">حذف</button></div>`).join("")+`<button class="btn" onclick="editP(0)">+ إضافة منتج</button>`}
-function delP(id){if(confirm("حذف المنتج؟")){D.p=D.p.filter(x=>x.id!==id);save();renderAdmin()}}
-let img="";
-function editP(id){const p=D.p.find(x=>x.id===id)||{n:"",e:"🛍️",d:"",o:"",pr:"",img:""};img=p.img||"";
- openM(`<h3>${id?"تعديل":"إضافة"} منتج</h3><label>الاسم</label><input id="e1" value="${esc(p.n)}"><label>أيقونة (إيموجي بديلة للصورة)</label><input id="e2" value="${esc(p.e)}">
- <label>الوصف</label><textarea id="e3" rows="4">${esc(p.d)}</textarea><div class="g2"><div><label>السعر قبل الخصم</label><input id="e4" type="number" value="${p.o}"></div><div><label>السعر بعد الخصم</label><input id="e5" type="number" value="${p.pr}"></div></div>
- <label>صورة المنتج (رفع من الجهاز)</label><input type="file" accept="image/*" onchange="upl(this)"><label>أو رابط صورة</label><input id="e6" dir="ltr" value="${esc(p.img&&p.img.startsWith("http")?p.img:"")}">
- <button class="btn" style="width:100%" onclick="saveP(${id})">حفظ</button>`)}
-function upl(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement("canvas"),k=Math.min(1,700/im.width);c.width=im.width*k;c.height=im.height*k;c.getContext("2d").drawImage(im,0,0,c.width,c.height);img=c.toDataURL("image/jpeg",.78)};im.src=r.result};r.readAsDataURL(f)}
-function saveP(id){const g=i=>$("#e"+i).value.trim(),o={id:id||Date.now(),n:g(1),e:g(2),d:g(3),o:+g(4),pr:+g(5),img:g(6)||img};
- if(!o.n||!o.pr){alert("الاسم والسعر مطلوبان");return}
- id?D.p[D.p.findIndex(x=>x.id===id)]=o:D.p.push(o);save();closeM();renderAdmin()}
-
-function aO(){const L=LS("bh_orders")||[];
- $("#ab").innerHTML=`<p style="color:var(--m);margin-bottom:10px">عند وصول طلب في واتساب، سجّله هنا ثم اضغط إرسال: تصل العميل رسالة تأكيد برابط تتبع. غيّر الحالة وأرسل مرة أخرى لتحديثه.</p>
- <div class="g2"><div><label>رقم الطلب</label><input id="a1" placeholder="BA-1234" dir="ltr"></div><div><label>اسم العميل</label><input id="a2"></div><div><label>هاتف العميل</label><input id="a3" dir="ltr"></div><div><label>المنتج</label><input id="a4"></div></div>
- <button class="btn" onclick="addO()">+ تسجيل الطلب</button><hr style="border-color:var(--line);margin:16px 0">
- ${L.map((o,i)=>`<div class="row"><span><b>${esc(o.c)}</b> — ${esc(o.n)}<br><small style="color:var(--m)">${esc(o.p)} · ${esc(o.ph)}</small></span>
- <select style="width:auto;margin:0" onchange="stO(${i},this.value)">${ST.map((x,k)=>`<option value="${k}" ${o.s==k?"selected":""}>${x}</option>`).join("")}</select>
- <button class="btn" onclick="waO(${i})">إرسال للعميل 📲</button><button class="btn r" onclick="dlO(${i})">✕</button></div>`).join("")||"<p style='color:var(--m)'>لا توجد طلبات مسجلة.</p>"}`}
-function addO(){const g=i=>$("#a"+i).value.trim();if(!g(1)||!g(3)){alert("رقم الطلب والهاتف مطلوبان");return}const L=LS("bh_orders")||[];L.unshift({c:g(1).toUpperCase(),n:g(2),ph:g(3),p:g(4),s:0});LS("bh_orders",L);aO()}
-function stO(i,v){const L=LS("bh_orders");L[i].s=+v;LS("bh_orders",L)}
-function dlO(i){const L=LS("bh_orders");L.splice(i,1);LS("bh_orders",L);aO()}
-function waO(i){const o=(LS("bh_orders"))[i],u=location.href.split("#")[0]+"#track="+enc({c:o.c,n:o.n,p:o.p,s:o.s});
- const m=`مرحباً ${o.n} 👋\nتم استلام طلبك رقم *${o.c}* بنجاح ✅\nالحالة الحالية: *${ST[o.s]}*\nتتبع طلبك من هنا:\n${u}\n\nشكراً لتسوقك من ${D.s.name}`;
- window.open(`https://wa.me/${phoneIntl(o.ph)}?text=${encodeURIComponent(m)}`,"_blank")}
-
-function aS(){
- const s=D.s;
- const F=[
-  ["name","اسم الموقع"],["en","الاسم الإنجليزي"],
-  ["owner","رقم واتساب الطلبات الدولي (أرقام فقط مع مفتاح الدولة)"],
-  ["phone","رقم هاتف إضافي (اختياري)"],["cc","مفتاح الدولة الافتراضي"],
-  ["fb","رابط فيسبوك"],["instagram","رابط إنستغرام"],
-  ["tiktok","رابط تيك توك"],["youtube","رابط يوتيوب"],
-  ["cur","العملة"],["bar","شريط الإعلان"],["h1","عنوان الواجهة"],
-  ["sub","وصف الواجهة"],["about","من نحن"]
- ];
- $("#ab").innerHTML=F.map(([k,l])=>`<label>${l}</label><input id="s_${k}" value="${esc(s[k]||"")}" ${["fb","instagram","tiktok","youtube"].includes(k)?'dir="ltr"':''}>`).join("")
- +`<label>نهاية العرض (عدّاد التخفيضات)</label><input id="s_end" type="datetime-local" value="${new Date(s.end-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,16)}">
- <p style="color:var(--m);font-size:13px;margin:8px 0">لحفظ الإعدادات للجميع، أدخل رمز ADMIN_TOKEN الذي أعددته في أسرار Cloudflare. لا تضع الرمز داخل ملفات الموقع.</p>
- <button class="btn" onclick="saveS()">حفظ الإعدادات في قاعدة البيانات</button>`;
-}
-async function saveS(){
- const keys=["name","en","owner","phone","cc","fb","instagram","tiktok","youtube","cur","bar","h1","sub","about"];
- const next={...D.s};
- keys.forEach(k=>next[k]=$("#s_"+k).value.trim());
- next.end=new Date($("#s_end").value).getTime()||D.s.end;
- const token=prompt("أدخل رمز إدارة API (ADMIN_TOKEN) لحفظ الإعدادات:");
- if(!token)return;
- const serverSettings={...next};delete serverSettings.pass;
- try{
-  const response=await fetch(API_SETTINGS,{
-   method:"PUT",
-   headers:{"Content-Type":"application/json","Authorization":"Bearer "+token},
-   body:JSON.stringify({settings:serverSettings})
-  });
-  const payload=await response.json();
-  if(!response.ok||!payload.success){
-   alert(payload.error||"تعذر حفظ الإعدادات. تحقق من رمز الإدارة وربط قاعدة البيانات.");
-   return;
-  }
-  D.s=next;save();alert("تم حفظ الإعدادات في قاعدة البيانات بنجاح ✅");
-  renderShop();
- }catch(e){
-  alert("تعذر الاتصال بواجهة API. تحقق من نشر Worker وإعداد CORS.");
- }
-}
-
-function aB(){$("#ab").innerHTML=`<div class="about" style="text-align:right"><h3 style="color:var(--y)">كيف تنشر تعديلاتك للجميع؟</h3><p style="color:#555">إعدادات التواصل تُحفظ في قاعدة البيانات عبر واجهة API. أما إدارة المنتجات والطلبات في هذه النسخة فما زالت محلية في المتصفح؛ سنربطها بقاعدة البيانات في مرحلة لاحقة. يمكنك تصدير نسخة احتياطية من الإعدادات المحلية عند الحاجة.</p><br>
- <button class="btn" onclick="exp()">⬇ تصدير data.json</button> <label class="btn o" style="margin:0">استيراد ملف<input type="file" accept=".json" hidden onchange="imp(this)"></label> <button class="btn r" onclick="if(confirm('إعادة كل شيء للإعدادات الأصلية؟')){localStorage.removeItem('bh_data');location.reload()}">إعادة الضبط</button></div>`}
-function exp(){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(D)],{type:"application/json"}));a.download="data.json";a.click()}
-function imp(i){const r=new FileReader();r.onload=()=>{try{D=JSON.parse(r.result);save();alert("تم الاستيراد ✅");renderAdmin()}catch(e){alert("ملف غير صالح")}};r.readAsText(i.files[0])}
-
-init();
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const money=n=>Number(n||0).toLocaleString("en-US");
+const apiReady=()=>API_BASE.startsWith("https://")&&!API_BASE.includes("REPLACE-WITH");
+async function api(path,options={}){if(!apiReady())throw Error("أضف رابط Worker الصحيح في أعلى ملف index.html أولًا.");const headers={"Content-Type":"application/json",...(options.headers||{})};if(options.auth&&adminToken)headers.Authorization="Bearer "+adminToken;const r=await fetch(API_BASE+path,{...options,headers});let data={};try{data=await r.json()}catch{}if(!r.ok||data.success===false)throw Error(data.error||("فشل الطلب ("+r.status+")"));return data}
+async function init(){try{const [s,p]=await Promise.all([api("/api/settings"),api("/api/products")]);settings={...settings,...s.settings};products=(p.products||[]).map(normalizeProduct);categories=[...new Set(products.map(p=>p.category).filter(Boolean))];}catch(e){console.warn(e)}render();if(!apiReady())alert("المتجر جاهز كملفات، لكن يجب وضع رابط Worker الفعلي في API_BASE قبل ربط قاعدة البيانات.");}
+function normalizeProduct(p){return {id:p.id,name:p.name||"منتج",description:p.description||"",price:Number(p.price||0),old_price:Number(p.old_price||0),image_url:p.image_url||"",stock:Number(p.stock??0),condition_type:p.condition_type||"جديد",category:p.category||"عام",is_active:p.is_active??1}}
+function go(page){location.hash=page}
+function render(){const page=location.hash.replace("#","")||"home";if(page==="admin"){renderAdminGate();return}if(page==="about"){renderAbout();return}if(page==="contact"){renderContact();return}if(page.startsWith("product-")){renderProduct(Number(page.slice(8)));return}renderHome()}
+function header(){return `<div class="topbar">${esc(settings.bar)}</div><header><div class="wrap"><a href="#home" class="logo"><span class="logo-icon">🛍️</span><span><b>${esc(settings.name)}</b><small>${esc(settings.en)}</small></span></a><nav><a href="#home">الرئيسية</a><a href="#about">من نحن</a><a href="#contact">اتصل بنا</a></nav><div class="actions"><a class="btn small" target="_blank" rel="noopener" href="${waLink()}">واتساب</a></div></div></header>`}
+function footer(){return `<footer><div class="wrap"><b>${esc(settings.name)}</b><p>© ${new Date().getFullYear()} جميع الحقوق محفوظة</p><p><a href="#about">من نحن</a> · <a href="#contact">اتصل بنا</a> · <a href="#admin">الإدارة</a></p></div></footer>${settings.owner?`<a class="float-wa" target="_blank" rel="noopener" href="${waLink()}" aria-label="واتساب">✆</a>`:""}`}
+function waLink(message="مرحبًا، أريد الاستفسار عن منتجات بحر أبيض"){return "https://wa.me/"+String(settings.owner||"").replace(/\D/g,"")+"?text="+encodeURIComponent(message)}
+function productCard(p){return `<article class="card"><div class="product-img" onclick="go('product-${p.id}')">${p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none'">`:"🛍️"}</div><div class="card-body"><small class="muted">${esc(p.category)}</small><h3>${esc(p.name)}</h3><p class="muted">${esc(p.description.slice(0,105))}${p.description.length>105?"…":""}</p><div class="price"><strong>${money(p.price)} ${esc(settings.cur)}</strong>${p.old_price>p.price?`<s>${money(p.old_price)}</s>`:""}</div><div class="card-actions"><button class="btn dark" onclick="go('product-${p.id}')">التفاصيل والطلب</button></div></div></article>`}
+function renderHome(){const cats=["الكل",...new Set(products.map(p=>p.category).filter(Boolean))];$("#app").innerHTML=header()+`<section class="hero"><div class="wrap"><span class="pill">تسوّق بثقة</span><h1>${esc(settings.h1)}</h1><p>${esc(settings.sub)}</p><a class="btn dark" href="#products">استعرض المنتجات</a></div></section><main class="wrap"><div class="trust"><div>🚚 توصيل حسب الاتفاق</div><div>💬 الطلب عبر الواتساب</div><div>💵 الدفع عند الاستلام حسب التوفر</div><div>🛍️ فئات ومنتجات متنوعة</div></div><section class="section" id="products"><h2>تسوّق حسب <span>الفئة</span></h2><div class="categories">${cats.map(c=>`<button class="category-btn ${c===selectedCategory?"active":""}" onclick="filterCategory('${esc(c).replace(/'/g,"\\'")}')">${esc(c)}</button>`).join("")}</div><h2>منتجات <span>المتجر</span></h2><div class="grid">${products.filter(p=>p.is_active!==0&&(selectedCategory==="الكل"||p.category===selectedCategory)).map(productCard).join("")||"<p class='muted'>لا توجد منتجات منشورة حاليًا. أضف المنتجات من لوحة الإدارة.</p>"}</div></section><section class="section"><div class="info-box"><h2>مرحبًا بك في <span>${esc(settings.name)}</span></h2><p>${esc(settings.about)}</p><a class="btn" href="#about">اعرف المزيد عنا</a></div></section></main>`+footer()}
+function filterCategory(c){selectedCategory=c;renderHome();document.querySelector("#products")?.scrollIntoView()}
+function renderAbout(){$("#app").innerHTML=header()+`<main class="wrap section"><h2>من <span>نحن</span></h2><div class="info-box"><h2>${esc(settings.name)}</h2><p>${esc(settings.about)}</p><p>${esc(settings.sub)}</p><a class="btn" href="#home">تصفح المنتجات</a></div></main>`+footer()}
+function renderContact(){$("#app").innerHTML=header()+`<main class="wrap section"><h2>اتصل <span>بنا</span></h2><div class="contact-grid"><div class="contact-item"><h3>واتساب</h3><p>${esc(settings.owner)}</p><a class="btn" target="_blank" rel="noopener" href="${waLink("مرحبًا، أتواصل مع خدمة عملاء بحر أبيض")}">مراسلة خدمة العملاء</a></div><div class="contact-item"><h3>البريد الإلكتروني</h3><p>${esc(settings.email||"أضف البريد من لوحة الإدارة")}</p>${settings.email?`<a class="btn" href="mailto:${esc(settings.email)}">إرسال بريد</a>`:""}</div><div class="contact-item"><h3>فيسبوك</h3><p>تابع جديد المنتجات والعروض</p>${settings.fb?`<a class="btn" target="_blank" rel="noopener" href="${esc(settings.fb)}">زيارة الصفحة</a>`:"غير محدد"}</div></div></main>`+footer()}
+function renderProduct(id){const p=products.find(x=>Number(x.id)===id);if(!p){renderHome();return}$("#app").innerHTML=header()+`<main class="wrap section"><a href="#home">← العودة للمنتجات</a><div class="info-box"><div class="modal-grid"><div class="product-img" style="height:300px;cursor:default">${p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(p.name)}">`:"🛍️"}</div><div><small class="muted">${esc(p.category)}</small><h2>${esc(p.name)}</h2><p>${esc(p.description)}</p><p>الحالة: ${esc(p.condition_type)}</p><p>المخزون: ${p.stock>0?money(p.stock):"يرجى التأكد من التوفر"}</p><div class="price"><strong>${money(p.price)} ${esc(settings.cur)}</strong>${p.old_price>p.price?`<s>${money(p.old_price)}</s>`:""}</div><button class="btn" onclick="orderForm(${p.id})">طلب هذا المنتج عبر واتساب</button></div></div></div></main>`+footer()}
+function openModal(html){$("#modal").innerHTML=html;$("#overlay").classList.add("open")}
+function closeModal(){$("#overlay").classList.remove("open")}
+$("#overlay").addEventListener("click",e=>{if(e.target.id==="overlay")closeModal()});
+function orderForm(id){const p=products.find(x=>Number(x.id)===Number(id));if(!p)return;openModal(`<div class="close-row"><h2>طلب: ${esc(p.name)}</h2><button class="btn outline small" onclick="closeModal()">إغلاق</button></div><form onsubmit="submitOrder(event,${p.id})"><label>الاسم الكامل *</label><input name="name" required><div class="modal-grid"><div><label>رقم الهاتف *</label><input name="phone" type="tel" required></div><div><label>الكمية *</label><input name="quantity" type="number" min="1" value="1" required></div></div><label>المدينة أو المنطقة *</label><input name="city" required><label>العنوان أو تفاصيل التوصيل</label><textarea name="address"></textarea><label>ملاحظات إضافية</label><textarea name="notes"></textarea><button class="btn" type="submit">متابعة وإرسال الطلب عبر واتساب</button><p class="muted">لن يتم الدفع داخل الموقع؛ يتم تأكيد الطلب والتفاصيل مع خدمة العملاء عبر واتساب.</p></form>`)}
+function submitOrder(e,id){e.preventDefault();const p=products.find(x=>Number(x.id)===Number(id));const f=new FormData(e.target);const q=Math.max(1,Number(f.get("quantity")||1));const message=`طلب جديد من متجر ${settings.name}%0Aالمنتج: ${p.name}%0Aالسعر: ${money(p.price)} ${settings.cur}%0Aالكمية: ${q}%0Aالإجمالي التقريبي: ${money(p.price*q)} ${settings.cur}%0Aالاسم: ${f.get("name")}%0Aهاتف العميل: ${f.get("phone")}%0Aالمدينة: ${f.get("city")}%0Aالعنوان: ${f.get("address")||"غير محدد"}%0Aملاحظات: ${f.get("notes")||"لا يوجد"}`;window.open("https://wa.me/"+String(settings.owner).replace(/\D/g,"")+"?text="+encodeURIComponent(message.replace(/%0A/g,"\n")),"_blank","noopener");closeModal()}
+function renderAdminGate(){if(adminToken){renderAdmin();return}$("#app").innerHTML=header()+`<main class="wrap admin-shell"><div class="admin-panel" style="max-width:520px;margin:20px auto"><h2>دخول الإدارة</h2><p class="muted">أدخل رمز الإدارة الذي أعددته في Cloudflare كسرّ باسم ADMIN_TOKEN. لا تضع الرمز في ملف الموقع.</p><form onsubmit="adminLogin(event)"><label>رمز الإدارة</label><input id="admin-token" type="password" autocomplete="current-password" required><button class="btn">دخول</button></form><p id="login-status" class="status"></p></div></main>`+footer()}
+async function adminLogin(e){e.preventDefault();adminToken=$("#admin-token").value;try{await api("/api/admin/check",{auth:true});sessionStorage.setItem("b7_admin_token",adminToken);renderAdmin()}catch(err){$("#login-status").textContent=err.message;adminToken=""}}
+async function renderAdmin(){if(!adminToken)adminToken=sessionStorage.getItem("b7_admin_token")||"";$("#app").innerHTML=header()+`<main class="wrap admin-shell"><div class="close-row"><h1>لوحة إدارة بحر أبيض</h1><button class="btn outline" onclick="adminLogout()">تسجيل الخروج</button></div><div class="admin-tabs"><button class="btn ${adminTab==="products"?"dark":"outline"}" onclick="adminTab='products';renderAdmin()">المنتجات</button><button class="btn ${adminTab==="settings"?"dark":"outline"}" onclick="adminTab='settings';renderAdmin()">إعدادات المتجر</button></div><div id="admin-content"><p>جارٍ تحميل لوحة الإدارة...</p></div></main>`+footer();try{await api("/api/admin/check",{auth:true});if(adminTab==="settings")renderSettingsAdmin();else await renderProductsAdmin()}catch(e){adminToken="";sessionStorage.removeItem("b7_admin_token");renderAdminGate();alert("تعذر التحقق من الإدارة: "+e.message)}}
+function adminLogout(){adminToken="";sessionStorage.removeItem("b7_admin_token");renderAdminGate()}
+async function renderProductsAdmin(){const data=await api("/api/admin/products",{auth:true});products=(data.products||[]).map(normalizeProduct);categories=data.categories||[];const host=$("#admin-content");if(!host)return;host.innerHTML=`<div class="admin-panel"><button class="btn" onclick="editProduct()">+ إضافة منتج</button><p class="muted">تُحفظ التعديلات في قاعدة بيانات D1.</p></div><div class="admin-list">${products.map(p=>`<div class="admin-row"><div class="grow"><b>${esc(p.name)}</b><br><small class="muted">${esc(p.category)} · ${money(p.price)} ${esc(settings.cur)}</small></div><button class="btn small" onclick="editProduct(${p.id})">تعديل</button><button class="btn red small" onclick="deleteProduct(${p.id})">حذف</button></div>`).join("")||"لا توجد منتجات."}</div>`}
+async function editProduct(id){const p=products.find(x=>Number(x.id)===Number(id))||{name:"",description:"",price:"",old_price:"",image_url:"",stock:1,condition_type:"جديد",category:"عام"};openModal(`<h2>${id?"تعديل المنتج":"إضافة منتج"}</h2><form onsubmit="saveProduct(event,${id||0})"><label>اسم المنتج *</label><input name="name" value="${esc(p.name)}" required><label>الفئة *</label><input name="category" value="${esc(p.category)}" list="cat-options" required><datalist id="cat-options">${categories.map(c=>`<option value="${esc(c)}">`).join("")}</datalist><label>الوصف والتفاصيل</label><textarea name="description">${esc(p.description)}</textarea><div class="modal-grid"><div><label>السعر الحالي *</label><input name="price" type="number" min="0" value="${p.price}" required></div><div><label>السعر قبل التخفيض</label><input name="old_price" type="number" min="0" value="${p.old_price||0}"></div><div><label>المخزون</label><input name="stock" type="number" min="0" value="${p.stock??0}"></div><div><label>الحالة</label><select name="condition_type"><option ${p.condition_type==="جديد"?"selected":""}>جديد</option><option ${p.condition_type==="مستعمل"?"selected":""}>مستعمل</option><option ${p.condition_type==="مجدد"?"selected":""}>مجدد</option></select></div></div><label>رابط الصورة (رابط مباشر https)</label><input name="image_url" type="url" value="${esc(p.image_url)}"><label><input style="width:auto" name="is_active" type="checkbox" ${p.is_active!==0?"checked":""}> عرض المنتج في المتجر</label><p><button class="btn">حفظ المنتج في قاعدة البيانات</button> <button type="button" class="btn outline" onclick="closeModal()">إلغاء</button></p></form>`)}
+async function saveProduct(e,id){e.preventDefault();const f=new FormData(e.target);const body={name:f.get("name"),category:f.get("category"),description:f.get("description"),price:Number(f.get("price")),old_price:Number(f.get("old_price")||0),stock:Number(f.get("stock")||0),condition_type:f.get("condition_type"),image_url:f.get("image_url"),is_active:f.get("is_active")==="on"?1:0};try{await api(id?"/api/admin/products/"+id:"/api/admin/products",{method:id?"PUT":"POST",auth:true,body:JSON.stringify(body)});closeModal();await renderProductsAdmin();alert("تم حفظ المنتج في قاعدة البيانات.")}catch(err){alert("تعذر الحفظ: "+err.message)}}
+async function deleteProduct(id){if(!confirm("هل تريد حذف المنتج؟"))return;try{await api("/api/admin/products/"+id,{method:"DELETE",auth:true});await renderProductsAdmin()}catch(e){alert(e.message)}}
+async function renderSettingsAdmin(){const d=await api("/api/settings");settings={...settings,...d.settings};$("#admin-content").innerHTML=`<div class="admin-panel"><h2>إعدادات المتجر والتواصل</h2><form onsubmit="saveSettings(event)"><div class="modal-grid">${field("name","اسم المتجر")}${field("en","الاسم الإنجليزي")}${field("owner","رقم واتساب الدولي بدون +")}${field("phone","رقم الهاتف")}${field("email","بريد خدمة العملاء")}${field("cur","العملة")}${field("fb","رابط فيسبوك")}${field("instagram","رابط إنستغرام")}${field("tiktok","رابط تيك توك")}${field("youtube","رابط يوتيوب")}</div><label>الشريط الإعلاني</label><input name="bar" value="${esc(settings.bar)}"><label>عنوان الصفحة الرئيسية</label><input name="h1" value="${esc(settings.h1)}"><label>الوصف المختصر</label><textarea name="sub">${esc(settings.sub)}</textarea><label>نبذة من نحن</label><textarea name="about">${esc(settings.about)}</textarea><button class="btn">حفظ الإعدادات</button></form></div>`}
+function field(k,label){return `<div><label>${label}</label><input name="${k}" value="${esc(settings[k]||"")}"></div>`}
+async function saveSettings(e){e.preventDefault();const f=new FormData(e.target);const body={};for(const k of ["name","en","owner","phone","email","cur","fb","instagram","tiktok","youtube","bar","h1","sub","about"])body[k]=String(f.get(k)||"").trim();try{await api("/api/admin/settings",{method:"PUT",auth:true,body:JSON.stringify(body)});settings={...settings,...body};alert("تم حفظ الإعدادات في D1.");renderAdmin()}catch(err){alert("تعذر حفظ الإعدادات: "+err.message)}}
+addEventListener("hashchange",()=>{render()});init();
 </script>
-</body>
-</html>
+</body></html>
