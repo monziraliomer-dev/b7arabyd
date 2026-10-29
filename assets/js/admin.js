@@ -1,21 +1,59 @@
 (() => {
-  const cfg = window.STORE_CONFIG, $ = s => document.querySelector(s);
-  const loginPanel = $("#loginPanel"), settingsPanel = $("#settingsPanel");
-  const loginForm = $("#loginForm"), settingsForm = $("#settingsForm");
-  const loginMessage = $("#loginMessage"), settingsMessage = $("#settingsMessage");
+  const cfg = window.STORE_CONFIG,
+    $ = s => document.querySelector(s);
+    
+function convertDriveImageUrl(value) {
+  const url = String(value || "").trim();
+  if (!url) return "";
+
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname.toLowerCase();
+
+    if (
+      host === "drive.google.com" ||
+      host === "www.drive.google.com"
+    ) {
+      let id = parsed.searchParams.get("id") || "";
+
+      if (!id) {
+        const match = parsed.pathname.match(/\/file\/d\/([^/]+)/);
+        if (match) id = match[1];
+      }
+
+      if (id) {
+        return "https://drive.google.com/thumbnail?id="
+          + encodeURIComponent(id)
+          + "&sz=w1000";
+      }
+    }
+  } catch (_) {
+    return url;
+  }
+
+  return url;
+}
+
+  const loginPanel = $("#loginPanel"),
+    settingsPanel = $("#settingsPanel");
+  const loginForm = $("#loginForm"),
+    settingsForm = $("#settingsForm");
+  const loginMessage = $("#loginMessage"),
+    settingsMessage = $("#settingsMessage");
   let token = "";
   const defaults = cfg.DEFAULTS || {};
-  function message(el, text, ok=false) {
+  
+  function message(el, text, ok = false) {
     if (!el) return;
     el.textContent = text;
     el.className = `form-message ${ok ? "success" : "error"}`;
   }
-  async function request(path, options={}) {
-    const headers = {"Content-Type":"application/json", ...(options.headers||{})};
+  async function request(path, options = {}) {
+    const headers = { "Content-Type": "application/json", ...(options.headers || {}) };
     if (token) headers.Authorization = `Bearer ${token}`;
     let res;
     try {
-      res = await fetch(`${cfg.API_BASE}${path}`, {...options, headers});
+      res = await fetch(`${cfg.API_BASE}${path}`, { ...options, headers });
     } catch (_) {
       throw new Error("تعذر الاتصال بالخادم. تحقق من API_BASE واتصال الإنترنت.");
     }
@@ -23,6 +61,7 @@
     if (!res.ok || body.success === false) throw new Error(body.error || `فشل الطلب (${res.status})`);
     return body;
   }
+  
   function unwrap(body, key) {
     if (Array.isArray(body)) return body;
     if (Array.isArray(body?.[key])) return body[key];
@@ -30,14 +69,15 @@
     if (Array.isArray(body?.items)) return body.items;
     return [];
   }
+  
   function fillForm(s) {
-    const data = {...defaults, ...(s || {})};
-    Object.entries(data).forEach(([k,v]) => {
+    const data = { ...defaults, ...(s || {}) };
+    Object.entries(data).forEach(([k, v]) => {
       const input = settingsForm?.elements.namedItem(k);
       if (input) input.value = v ?? "";
     });
   }
-
+  
   // Add product-management interface without requiring edits to admin.html.
   function addProductStyles() {
     if ($("#productManagerStyles")) return;
@@ -60,7 +100,7 @@
     `;
     document.head.appendChild(style);
   }
-
+  
   function createProductManager() {
     if ($("#productManager")) return;
     addProductStyles();
@@ -104,11 +144,13 @@
     $("#pmRefresh").addEventListener("click", loadProducts);
     $("#pmProductsBody").addEventListener("click", productTableAction);
   }
-
-  let categories = [], products = [];
-  function setProductStatus(text, ok=false) { message($("#pmStatus"), text, ok); }
+  
+  let categories = [],
+    products = [];
+  
+  function setProductStatus(text, ok = false) { message($("#pmStatus"), text, ok); }
   async function loadCategories() {
-    const body = await request("/api/categories", {method:"GET"});
+    const body = await request("/api/categories", { method: "GET" });
     categories = unwrap(body, "categories");
     const select = $("#pmProductForm select[name='category_id']");
     select.innerHTML = '<option value="">اختر التصنيف</option>';
@@ -124,7 +166,7 @@
     if (!tbody) return;
     tbody.innerHTML = '<tr><td colspan="6">جارٍ تحميل المنتجات...</td></tr>';
     try {
-      const body = await request("/api/products", {method:"GET"});
+      const body = await request("/api/products", { method: "GET" });
       products = unwrap(body, "products");
       if (!products.length) {
         tbody.innerHTML = '<tr><td colspan="6">لا توجد منتجات حتى الآن.</td></tr>';
@@ -141,13 +183,25 @@
           p.stock ?? 0,
           (Number(p.is_active) === 1 || p.is_active === true) ? "نشط" : "غير نشط"
         ];
-        values.forEach(v => { const td=document.createElement("td"); td.textContent=String(v); tr.appendChild(td); });
+        values.forEach(v => { const td = document.createElement("td");
+          td.textContent = String(v);
+          tr.appendChild(td); });
         const actions = document.createElement("td");
         const edit = document.createElement("button");
-        edit.type="button"; edit.className="pm-secondary"; edit.dataset.action="edit"; edit.dataset.id=p.id; edit.textContent="تعديل";
+        edit.type = "button";
+        edit.className = "pm-secondary";
+        edit.dataset.action = "edit";
+        edit.dataset.id = p.id;
+        edit.textContent = "تعديل";
         const del = document.createElement("button");
-        del.type="button"; del.className="pm-danger"; del.dataset.action="delete"; del.dataset.id=p.id; del.textContent="حذف";
-        actions.append(edit, del); tr.appendChild(actions); tbody.appendChild(tr);
+        del.type = "button";
+        del.className = "pm-danger";
+        del.dataset.action = "delete";
+        del.dataset.id = p.id;
+        del.textContent = "حذف";
+        actions.append(edit, del);
+        tr.appendChild(actions);
+        tbody.appendChild(tr);
       });
     } catch (err) {
       tbody.innerHTML = `<tr><td colspan="6"></td></tr>`;
@@ -156,7 +210,8 @@
   }
   async function saveProduct(e) {
     e.preventDefault();
-    const form = e.currentTarget, fd = new FormData(form);
+    const form = e.currentTarget,
+      fd = new FormData(form);
     const id = String(fd.get("id") || "").trim();
     const data = {
       name: String(fd.get("name") || "").trim(),
@@ -164,7 +219,7 @@
       price: Number(fd.get("price")),
       stock: Number(fd.get("stock") || 0),
       condition_type: String(fd.get("condition_type") || "new"),
-      image_url: String(fd.get("image_url") || "").trim(),
+      image_url: convertDriveImageUrl(fd.get("image_url")),
       description: String(fd.get("description") || "").trim(),
       is_active: form.elements.namedItem("is_active").checked ? 1 : 0
     };
@@ -173,14 +228,15 @@
       return;
     }
     if (!Number.isFinite(data.price) || data.price < 0 || !Number.isInteger(data.price) ||
-        !Number.isFinite(data.stock) || data.stock < 0 || !Number.isInteger(data.stock)) {
+      !Number.isFinite(data.stock) || data.stock < 0 || !Number.isInteger(data.stock)) {
       setProductStatus("السعر والمخزون يجب أن يكونا رقمين صحيحين غير سالبين.");
       return;
     }
     setProductStatus("جارٍ حفظ المنتج...");
     try {
       await request(id ? `/api/admin/products/${encodeURIComponent(id)}` : "/api/admin/products", {
-        method: id ? "PUT" : "POST", body: JSON.stringify(data)
+        method: id ? "PUT" : "POST",
+        body: JSON.stringify(data)
       });
       setProductStatus(id ? "تم تحديث المنتج بنجاح." : "تمت إضافة المنتج بنجاح.", true);
       resetProductForm();
@@ -191,58 +247,62 @@
   }
   async function saveCategory(e) {
     e.preventDefault();
-    const form=e.currentTarget, name=String(new FormData(form).get("name")||"").trim();
+    const form = e.currentTarget,
+      name = String(new FormData(form).get("name") || "").trim();
     if (!name) return;
     setProductStatus("جارٍ إضافة التصنيف...");
     try {
-      await request("/api/admin/categories", {method:"POST", body:JSON.stringify({name})});
+      await request("/api/admin/categories", { method: "POST", body: JSON.stringify({ name }) });
       form.reset();
       await loadCategories();
       setProductStatus("تمت إضافة التصنيف بنجاح.", true);
     } catch (err) { setProductStatus(`لم تتم إضافة التصنيف: ${err.message}`); }
   }
+  
   function resetProductForm() {
-    const form=$("#pmProductForm");
+    const form = $("#pmProductForm");
     if (!form) return;
     form.reset();
-    form.elements.namedItem("id").value="";
-    form.elements.namedItem("stock").value="0";
-    form.elements.namedItem("condition_type").value="new";
-    form.elements.namedItem("is_active").checked=true;
+    form.elements.namedItem("id").value = "";
+    form.elements.namedItem("stock").value = "0";
+    form.elements.namedItem("condition_type").value = "new";
+    form.elements.namedItem("is_active").checked = true;
   }
+  
   function productTableAction(e) {
-    const btn=e.target.closest("button[data-action]");
+    const btn = e.target.closest("button[data-action]");
     if (!btn) return;
-    const product=products.find(p => String(p.id)===String(btn.dataset.id));
+    const product = products.find(p => String(p.id) === String(btn.dataset.id));
     if (!product) return;
-    if (btn.dataset.action==="edit") {
-      const form=$("#pmProductForm");
-      form.elements.namedItem("id").value=product.id ?? "";
-      form.elements.namedItem("name").value=product.name ?? "";
-      form.elements.namedItem("category_id").value=product.category_id ?? "";
-      form.elements.namedItem("price").value=product.price ?? "";
-      form.elements.namedItem("stock").value=product.stock ?? 0;
-      form.elements.namedItem("condition_type").value=product.condition_type ?? "new";
-      form.elements.namedItem("image_url").value=product.image_url ?? "";
-      form.elements.namedItem("description").value=product.description ?? "";
-      form.elements.namedItem("is_active").checked=Number(product.is_active)===1 || product.is_active===true;
-      $("#pmProductForm").scrollIntoView({behavior:"smooth",block:"start"});
+    if (btn.dataset.action === "edit") {
+      const form = $("#pmProductForm");
+      form.elements.namedItem("id").value = product.id ?? "";
+      form.elements.namedItem("name").value = product.name ?? "";
+      form.elements.namedItem("category_id").value = product.category_id ?? "";
+      form.elements.namedItem("price").value = product.price ?? "";
+      form.elements.namedItem("stock").value = product.stock ?? 0;
+      form.elements.namedItem("condition_type").value = product.condition_type ?? "new";
+      form.elements.namedItem("image_url").value = product.image_url ?? "";
+      form.elements.namedItem("description").value = product.description ?? "";
+      form.elements.namedItem("is_active").checked = Number(product.is_active) === 1 || product.is_active === true;
+      $("#pmProductForm").scrollIntoView({ behavior: "smooth", block: "start" });
       setProductStatus(`تعديل المنتج: ${product.name || ""}`);
-    } else if (btn.dataset.action==="delete") {
+    } else if (btn.dataset.action === "delete") {
       if (!window.confirm(`هل تريد حذف المنتج «${product.name || ""}»؟`)) return;
-      request(`/api/admin/products/${encodeURIComponent(product.id)}`, {method:"DELETE"})
-        .then(async () => { setProductStatus("تم حذف المنتج.", true); await loadProducts(); })
+      request(`/api/admin/products/${encodeURIComponent(product.id)}`, { method: "DELETE" })
+        .then(async () => { setProductStatus("تم حذف المنتج.", true);
+          await loadProducts(); })
         .catch(err => setProductStatus(`لم يتم حذف المنتج: ${err.message}`));
     }
   }
-
+  
   loginForm.addEventListener("submit", async e => {
     e.preventDefault();
     token = $("#adminToken").value.trim();
     message(loginMessage, "جارٍ التحقق...");
     try {
-      await request("/api/admin/check", {method:"GET"});
-      const body = await request("/api/admin/settings", {method:"GET"});
+      await request("/api/admin/check", { method: "GET" });
+      const body = await request("/api/admin/settings", { method: "GET" });
       fillForm(body.settings || body.data || body);
       loginPanel.classList.add("hidden");
       settingsPanel.classList.remove("hidden");
@@ -254,7 +314,7 @@
       } catch (err) {
         setProductStatus(`تعذر تحميل التصنيفات أو المنتجات: ${err.message}`);
       }
-    } catch(err) {
+    } catch (err) {
       token = "";
       message(loginMessage, `تعذر تسجيل الدخول: ${err.message}. تحقق من نشر Worker وإعداد ADMIN_TOKEN.`);
     }
@@ -264,17 +324,19 @@
     const data = Object.fromEntries(new FormData(settingsForm).entries());
     message(settingsMessage, "جارٍ الحفظ في قاعدة البيانات...");
     try {
-      await request("/api/admin/settings", {method:"PUT", body:JSON.stringify(data)});
+      await request("/api/admin/settings", { method: "PUT", body: JSON.stringify(data) });
       message(settingsMessage, "تم حفظ الإعدادات في قاعدة البيانات بنجاح.", true);
-    } catch(err) {
+    } catch (err) {
       message(settingsMessage, `لم يتم الحفظ: ${err.message}. تأكد من نشر Worker وربط قاعدة D1.`);
     }
   });
   $("#logoutButton").addEventListener("click", () => {
-    token=""; $("#adminToken").value="";
+    token = "";
+    $("#adminToken").value = "";
     settingsPanel.classList.add("hidden");
     $("#productManager")?.classList.add("hidden");
     loginPanel.classList.remove("hidden");
   });
-  const y=$("#year"); if (y) y.textContent=new Date().getFullYear();
+  const y = $("#year");
+  if (y) y.textContent = new Date().getFullYear();
 })();
